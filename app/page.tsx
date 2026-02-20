@@ -8,35 +8,37 @@ export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div>
-            <header className="h-20 text-6xl z-60 text-white px-5 flex justify-between items-center bg-blue-950 ">
-                <h1>知的制御研究室</h1>
-                <button
+            <header className="h-26 z-60 text-white px-5 flex justify-between items-center bg-blue-950">
+                <h1 className="text-4xl">知的制御研究室</h1>
+                {/*<button
                     onMouseEnter={() => {
                         setIsOpen(!isOpen);
                     }}
                 >
                     {"<<"}
-                </button>
+                </button>*/}
             </header>
 
-            <div className="flex min-h-screen w-full overflow-hidden">
-                <main className="w-full lg:basis-5/6 shrink-0 p-4 transition-all">
-                    知的制御研究室は，ロボットの制御にまつわる研究を主に取り扱う，愛知工業大学に2023年に設立された比較的新興の研究室です
+            <article className="flex min-h-screen w-full overflow-hidden">
+                <main className=" lg:basis-5/6 shrink-0 transition-all">
+                    <section className="w-fit text-base md:text-2xl mx-auto px-2 py-20">
+                        知的制御研究室は，ロボットの制御にまつわる研究を主に取り扱う，
+                        <br />
+                        愛知工業大学に2023年に設立された比較的新興の研究室です
+                    </section>
                     <News />
                 </main>
                 <aside
                     className={`
-                              /* 共通: パフォーマンスに優れたtransformアニメーション */
-                              transition-transform duration-300 ease-in-out
-                              bg-gray-400
+                    transition-transform duration-300 ease-in-out
+                      bg-gray-400
 
-                              /* モバイル: 右端に固定、横幅を設定 */
-                              fixed inset-y-0 right-0 z-50 w-72
-                              ${isOpen ? "translate-x-0" : "translate-x-full"}
+                      fixed inset-y-0 right-0 z-50 w-72
+                        ${isOpen ? "translate-x-0" : "translate-x-full"}
 
-                              /* デスクトップ: 元の比率へリセット */
-                              lg:relative lg:inset-auto lg:z-0 lg:w-auto lg:basis-1/6 lg:translate-x-0
-                            `}
+                      lg:relative lg:inset-auto lg:z-0 lg:w-auto lg:basis-1/6 lg:translate-x-0
+
+                    `}
                 >
                     {/*メニューバーを閉じるボタン*/}
                     {/*<button
@@ -47,8 +49,8 @@ export default function Home() {
                             });
                         }}
                     ></button>*/}
-                    <ul className="text-2xl flex flex-col gap-3 px-5">
-                        <h3>各種リンク</h3>
+                    <h2 className="text-[18px] mt-1 mx-2 mb-3">ページ</h2>
+                    <ul className="text-2xl mx-4 flex flex-col gap-3">
                         <Link href="/about">研究室について</Link>
                         <Link href="/research">研究内容</Link>
                         <Link href="/annual-plan">年間計画</Link>
@@ -56,7 +58,7 @@ export default function Home() {
                         <Link href="/publications">論文・出版物</Link>
                     </ul>
                 </aside>
-            </div>
+            </article>
         </div>
     );
 }
